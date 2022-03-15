@@ -41,14 +41,17 @@ app.post('/weather', async (req, res) => {
 
     if (fetch.status === 200) {
         if (temperatureUnit === "standard") {
+            res.status(200);
             res.render('index', {
                 weatherText: `The temperature in ${cityName} is ${fetch.data.main.temp} K`
             });
         } else if (temperatureUnit === "metric") {
+            res.status(200);
             res.render('index', {
                 weatherText: `The temperature in ${cityName} is ${fetch.data.main.temp} °C`
             });
         } else if (temperatureUnit === "imperial") {
+            res.status(200);
             res.render('index', {
                 weatherText: `The temperature in ${cityName} is ${fetch.data.main.temp} °F`
             });

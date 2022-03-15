@@ -11,4 +11,13 @@ describe("POST /weather", () => {
         });
         expect(response.statusCode).toBe(400);
     });
+ test("should respond with a 200 status code for correct city name", async () => {
+     const response = await request.post("/weather").send({
+         cityName: "amsterdam"
+     });
+     expect(response.statusCode).toBe(200);
+ });
+
 });
+    
+
